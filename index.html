@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Save Sprout is a fun visual money tracker for kids.">
+  <title>Save Sprout — watch your savings grow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confetti confetti-a"></div><div class="confetti confetti-b"></div><div class="confetti confetti-c"></div>
+  <header class="topbar">
+    <a class="logo" href="#home" aria-label="Save Sprout home"><span class="logo-leaf">✦</span><span>save<span>sprout</span></span></a>
+    <nav aria-label="Main navigation"><a class="nav-link active" href="#home">My sprout</a><a class="nav-link" href="#history">Money history</a></nav>
+    <div class="top-actions"><button class="streak" title="Saving streak">🔥 <b id="streak-count">4</b> day streak</button><button class="avatar" aria-label="Open profile">M</button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero-grid">
+      <div class="hero-copy"><p class="eyebrow">YOUR MONEY GARDEN <span>✿</span></p><h1>Hey Maya,<br><span>let’s grow!</span></h1><p class="intro">Every coin helps your little buddy grow into something amazing.</p><div class="hero-buttons"><button class="button button-purple" data-modal="money">＋ Add money</button><button class="button button-yellow" data-modal="goal">✎ Set a goal</button></div></div>
+      <div class="pet-card" aria-label="Your virtual pet, Sprig"><div class="pet-card-top"><span class="level-pill">LEVEL <b id="pet-level">2</b></span><span class="sparkle">✦</span></div><div class="pet-scene"><div class="sun"></div><div class="cloud cloud-1"></div><div class="cloud cloud-2"></div><div class="ground"></div><div class="pet" id="pet"><div class="pet-leaf leaf-one"></div><div class="pet-leaf leaf-two"></div><div class="pet-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><span class="pet-mouth"></span><span class="blush blush-left"></span><span class="blush blush-right"></span></div><div class="pet-belly"></div><div class="pet-feet foot-left"></div><div class="pet-feet foot-right"></div><div class="accessory" id="pet-accessory">✿</div></div><div class="flower flower-a">✿</div><div class="flower flower-b">✿</div></div><div class="pet-name"><div><h2>Sprig <span>♡</span></h2><p id="pet-message">Sprig is feeling sunny!</p></div><div class="mood"><span class="mood-dot"></span> happy</div></div></div>
+    </section>
+
+    <section class="goal-strip" id="goal-section"><div class="goal-icon">🎮</div><div class="goal-info"><p class="section-label">MY BIG GOAL</p><h2 id="goal-name">New video game</h2><p id="goal-deadline">Due in 42 days · Keep going!</p></div><div class="goal-progress"><div class="progress-number"><strong id="goal-percent">42%</strong><span><b id="saved-amount">$21</b> of <b id="goal-amount">$50</b></span></div><div class="progress-track"><div class="progress-bar" id="goal-bar" style="width:42%"></div></div><p id="goal-remaining">$29 left to grow</p></div><button class="edit-button" data-modal="goal" aria-label="Edit savings goal">✎</button></section>
+
+    <section class="quick-stats"><article class="stat-card mint"><div class="stat-icon">🌱</div><div><p>GROWN SO FAR</p><strong id="total-saved">$21.00</strong><span>+ $6 this week</span></div></article><article class="stat-card peach"><div class="stat-icon">🪙</div><div><p>SPENDABLE MONEY</p><strong id="spendable">$14.00</strong><span>After your savings</span></div></article><article class="stat-card lilac"><div class="stat-icon">🏆</div><div><p>NEXT UNLOCK</p><strong id="next-unlock">Rainbow hat</strong><span id="unlock-subtitle">$29 more to unlock</span></div></article></section>
+
+    <section class="bottom-grid"><article class="history-card" id="history"><div class="card-heading"><div><p class="section-label">MONEY HISTORY</p><h2>Look at you go!</h2></div><button class="filter-button" id="filter-button">All time⌄</button></div><div class="history-list" id="history-list"></div><button class="history-add" data-modal="money">＋ Log money</button></article><aside class="how-card"><div class="how-title"><span>💡</span><div><p class="section-label">HOW IT WORKS</p><h2>Grow your buddy</h2></div></div><ol><li><b>Set</b><span>Pick something fun to save for.</span></li><li><b>Save</b><span>Add allowance or money you earn.</span></li><li><b>Grow</b><span>Unlock cute surprises as you go!</span></li></ol><div class="mini-garden"><span>🌷</span><span>🌼</span><span>🌱</span><span>🪴</span></div></aside></section>
+    <footer><span>Made for big dreams and little steps</span><span>♥</span><span>Save Sprout</span></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" aria-label="Close">×</button><div class="modal-emoji" id="modal-emoji">🪙</div><h2 id="modal-title">Log some money</h2><p id="modal-copy">Tell us about your latest money move.</p><form id="money-form"><label>What was it? <input id="item-name" required placeholder="e.g. Weekly allowance"></label><label>How much? <div class="money-input"><span>$</span><input id="item-amount" required type="number" min="0.01" step="0.01" placeholder="0.00"></div></label><label>Did you get or spend it? <select id="item-type"><option value="earned">I earned it!</option><option value="spent">I spent it</option></select></label><button class="button button-purple full" type="submit">Add to my garden ✦</button></form><form id="goal-form" hidden><label>What are you saving for? <input id="new-goal-name" required placeholder="e.g. A new skateboard"></label><label>How much will it cost? <div class="money-input"><span>$</span><input id="new-goal-amount" required type="number" min="1" step="1" placeholder="50"></div></label><label>When do you want it? <input id="new-goal-date" type="date"></label><button class="button button-yellow full" type="submit">Plant this goal 🌱</button></form></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
